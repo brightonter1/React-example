@@ -21,8 +21,6 @@ export const AddMember = () => {
     }
 
     const onHandleSubmit = (e) => {
-        e.preventDefault();
-
         dispatch(memberAdded(member));
         setMember(initial);
     }

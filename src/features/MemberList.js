@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { memberDeleted, memberSelectDeleted, memberDeleteAll } from './memberSlice'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import '../App.css';
+import '../App.css'
 
 export const MemberList = () => {
 
@@ -40,16 +40,18 @@ export const MemberList = () => {
         }
     }
 
-    const renderedMembers = members.map((member) => (
-        <tr key={member.id}>
-            <td><input type="checkbox" value={member.id} onClick={onClick} ></input></td>
-            <td>{member.fname + " " + member.lname}</td>
-            <td>{member.gender}</td>
-            <td>{member.country + member.phone}</td>
-            <td>{member.nation}</td>
-            <td><Link to={`/members/${member.id}`}>Edite</Link>/<a href="#" onClick={() => onHandleDeleteOnce(member.id)}>Delete</a></td>
-        </tr>
-    ))
+    const renderedMembers = members.map((member) => {
+        return (
+            <tr key={member.id}>
+                <td><input type="checkbox" value={member.id} onClick={onClick} ></input></td> 
+                <td>{member.fname + " " + member.lname}</td>
+                <td>{member.gender}</td>
+                <td>{member.country + member.phone}</td>
+                <td>{member.nation}</td>
+                <td><Link to={`/members/${member.id}`}>Edite</Link>/<a href="#" onClick={() => onHandleDeleteOnce(member.id)}>Delete</a></td>
+            </tr>
+        )
+    })
 
     return (
         <div style={{ margin: 'auto', width: '50%', padding: '20px' }}>
