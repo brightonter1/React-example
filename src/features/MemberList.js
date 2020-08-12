@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { memberDeleted, memberSelectDeleted, memberDeleteAll } from './memberSlice'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import '../app.css';
+import '../App.css';
 
 export const MemberList = () => {
 
